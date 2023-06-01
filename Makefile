@@ -1,4 +1,4 @@
 build:
-	docker build -t pbot .
+	docker build -t pdfbot .
 run:
-	docker run -d -p 3000:3000 --name pbot --rm pbot
+	docker run -d -p 80:8501 --name pdfbot --rm pdfbot
