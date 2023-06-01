@@ -1,0 +1,31 @@
+https://docs.oracle.com/en-us/iaas/developer-tutorials/tutorials/flask-on-ubuntu/01oci-ubuntu-
+flask-summary.htm
+
+
+
+An Add Ingress Rules dialog is displayed.
+Fill in the ingress rule with the following information.
+
+Fill in the ingress rule as follows:
+
+    Stateless: Checked
+    Source Type: CIDR
+    Source CIDR: 0.0.0.0/0
+    IP Protocol: TCP
+    Source port range: (leave-blank)
+    Destination Port Range: 5000
+    Description: Allow HTTP connections
+
+
+
+Update firewall settings.
+
+The Ubuntu firewall is disabled by default. However, you need to update your iptables 
+configuration to allow HTTP traffic. To update iptables, run the following commands:
+
+sudo iptables -I INPUT 6 -m state --state NEW -p tcp --dport 5000 -j ACCEPT
+sudo netfilter-persistent save
+
+The commands add a rule to allow HTTP traffic through port 5000 and saves the changes to the 
+iptables configuration files.
+
