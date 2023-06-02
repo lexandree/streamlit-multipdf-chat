@@ -11,7 +11,9 @@ WORKDIR /app
 
 # RUN git clone https://github.com/streamlit/streamlit-example.git .
 
-COPY *.py,requirements.txt,.env ./
+COPY *.py .
+COPY requirements.txt .
+COPY .env .
 
 RUN pip3 install -r requirements.txt
 
