@@ -11,7 +11,7 @@ WORKDIR /app
 
 # RUN git clone https://github.com/streamlit/streamlit-example.git .
 
-COPY *.py .
+COPY *.py ./
 COPY requirements.txt .
 COPY .env .
 
